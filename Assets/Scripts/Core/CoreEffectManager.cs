@@ -14,13 +14,13 @@ public class CoreEffectManager : MonoBehaviour
         CoreHealth.OnCoreDestroyed -= HandleCoreDestroyed;
     }
 
-    private void HandleCoreHealthChanged(float currentHealth, float maxHealth)
+    private void HandleCoreHealthChanged(float currentHealth)
     {
-        Debug.Log($"[EffectManager] Çekirdek hasar aldý! Kalan Can: {currentHealth}/{maxHealth}");
+        Debug.Log($"[EffectManager] Çekirdek hasar efekti oynatýldý! Güncel Can: {currentHealth}");
     }
 
     private void HandleCoreDestroyed()
     {
-        Debug.Log("[EffectManager] ÇEKÝRDEK PATLADI! BOOOM!");
+        Debug.Log("[EffectManager] Çekirdek patlama efekti (VFX) oynatýldý!");
     }
 }
