@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IAttackBehavior
 {
-    void ExecuteAttack(Transform target);
+    void ExecuteAttack(Transform attacker, Transform target);
 }

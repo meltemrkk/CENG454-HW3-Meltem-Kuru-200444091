@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class DirectAttackStrategy : IAttackBehavior
 {
-    public void ExecuteAttack(Transform target)
+    public void ExecuteAttack(Transform attacker, Transform target)
     {
-        Debug.Log("Düþman doðrudan çekirdeðe saldýrýyor! (10 Hasar)");
+        Debug.Log("Düþman doðrudan ateþ ediyor!");
 
-        var damageable = target.GetComponent<IDamageable>();
-        if (damageable != null)
+        GameObject bullet = ObjectPooler.Instance.SpawnFromPool("EnemyBullet", attacker.position + attacker.forward, attacker.rotation);
+
+        if (bullet != null)
         {
-            damageable.TakeDamage(10f);
+            bullet.transform.LookAt(target.position);
         }
     }
 }
