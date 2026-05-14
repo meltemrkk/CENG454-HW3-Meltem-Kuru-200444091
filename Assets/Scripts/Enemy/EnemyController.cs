@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.InputSystem; 
+using UnityEngine.InputSystem;
 
 public class EnemyController : MonoBehaviour
 {
     private IAttackBehavior currentAttackStrategy;
-
     public Transform targetCore;
 
     private void Start()
@@ -25,20 +24,17 @@ public class EnemyController : MonoBehaviour
         {
             if (targetCore != null)
             {
-                currentAttackStrategy.ExecuteAttack(targetCore);
+                currentAttackStrategy.ExecuteAttack(transform, targetCore);
             }
         }
 
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {
             SetStrategy(new DirectAttackStrategy());
-            Debug.Log("Strateji deðiþti: Doðrudan Saldýrý");
         }
-
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
         {
             SetStrategy(new FlankAttackStrategy());
-            Debug.Log("Strateji deðiþti: Taktiksel Saldýrý (Flank)");
         }
     }
 }

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class FlankAttackStrategy : IAttackBehavior
 {
-    public void ExecuteAttack(Transform target)
+    public void ExecuteAttack(Transform attacker, Transform target)
     {
-        Debug.Log("Düþman taktiksel olarak etraftan dolanarak saldýrýyor! (5 Hasar)");
+        Debug.Log("Düþman taktiksel saldýrýyor (Yakýn Dövüþ)!");
 
         var damageable = target.GetComponent<IDamageable>();
         if (damageable != null)

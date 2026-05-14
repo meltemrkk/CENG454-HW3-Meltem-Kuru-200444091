@@ -5,7 +5,7 @@ public class CoreHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private float maxHealth = 100f;
     public float CurrentHealth { get; private set; }
-    public static event Action<float, float> OnCoreHealthChanged; // Mevcut Can, Maksimum Can
+    public static event Action<float, float> OnCoreHealthChanged; 
     public static event Action OnCoreDestroyed;
 
     private void Awake()
